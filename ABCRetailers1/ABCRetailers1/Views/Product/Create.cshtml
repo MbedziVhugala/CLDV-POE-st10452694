@@ -1,0 +1,48 @@
+﻿
+@model ABCRetailers.Models.Product
+
+@{
+    ViewData["Title"] = "Create Product";
+}
+
+<h2>Create New Product</h2>
+
+<form asp-action="Create" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label asp-for="ProductName" class="control-label"></label>
+        <input asp-for="ProductName" class="form-control" />
+        <span asp-validation-for="ProductName" class="text-danger"></span>
+    </div>
+    
+    <div class="form-group">
+        <label asp-for="Description" class="control-label"></label>
+        <textarea asp-for="Description" class="form-control" rows="3"></textarea>
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Price" class="control-label"></label>
+        <input asp-for="Price" class="form-control" />
+        <span asp-validation-for="Price" class="text-danger"></span>
+    </div>
+    
+    <div class="form-group">
+        <label asp-for="StockAvailable" class="control-label"></label>
+        <input asp-for="StockAvailable" class="form-control" type="number" />
+        <span asp-validation-for="StockAvailable" class="text-danger"></span>
+    </div>
+    
+    <!-- IMAGE UPLOAD FIELD -->
+    <div class="form-group">
+        <label for="imageFile" class="control-label">Product Image</label>
+        <input type="file" name="imageFile" id="imageFile" class="form-control" 
+               accept="image/*" />
+        <small class="form-text text-muted">Upload a product image (JPG, PNG, GIF)</small>
+    </div>
+    
+    <div class="form-group mt-3">
+        <button type="submit" class="btn btn-primary">Create Product</button>
+        <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+    </div>
+</form>
+}

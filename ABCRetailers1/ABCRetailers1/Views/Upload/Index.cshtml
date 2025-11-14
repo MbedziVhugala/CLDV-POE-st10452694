@@ -1,0 +1,45 @@
+﻿@model ABCRetailers.Models.FileUploadModel
+
+@{
+    ViewData["Title"] = "Upload Payment Proof";
+}
+
+<h2>Upload Payment Proof</h2>
+
+<form asp-action="Index" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label asp-for="ProofOfPayment" class="control-label"></label>
+        <input asp-for="ProofOfPayment" class="form-control" type="file"
+               accept=".pdf,.jpg,.jpeg,.png,.doc,.docx" />
+        <span asp-validation-for="ProofOfPayment" class="text-danger"></span>
+        <small class="form-text text-muted">
+            Accepted formats: PDF, JPG, PNG, DOC, DOCX (Max 10MB)
+        </small>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="OrderId" class="control-label"></label>
+        <input asp-for="OrderId" class="form-control" />
+        <span asp-validation-for="OrderId" class="text-danger"></span>
+        <small class="form-text text-muted">Optional: Associated Order ID</small>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="CustomerName" class="control-label"></label>
+        <input asp-for="CustomerName" class="form-control" />
+        <span asp-validation-for="CustomerName" class="text-danger"></span>
+        <small class="form-text text-muted">Optional: Customer Name</small>
+    </div>
+
+    <div class="form-group mt-3">
+        <button type="submit" class="btn btn-primary">Upload File</button>
+        <a asp-controller="Home" asp-action="Index" class="btn btn-secondary">Cancel</a>
+    </div>
+</form>
+
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success mt-3">
+        @TempData["Success"]
+    </div>
+}

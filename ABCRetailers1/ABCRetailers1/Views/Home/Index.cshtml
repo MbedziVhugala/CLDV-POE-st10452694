@@ -1,0 +1,62 @@
+﻿@model ABCRetailers.Models.ViewModels.HomeViewModel
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to ABCRetailers</h1>
+    <p class="lead">Your one-stop shop for all retail needs</p>
+</div>
+
+<div class="row mt-5">
+    <div class="col-md-3">
+        <div class="card text-white bg-primary mb-3">
+            <div class="card-body">
+                <h5 class="card-title">@Model.CustomerCount</h5>
+                <p class="card-text">Total Customers</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card text-white bg-success mb-3">
+            <div class="card-body">
+                <h5 class="card-title">@Model.ProductCount</h5>
+                <p class="card-text">Total Products</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card text-white bg-warning mb-3">
+            <div class="card-body">
+                <h5 class="card-title">@Model.OrderCount</h5>
+                <p class="card-text">Total Orders</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h3 class="mt-5">Featured Products</h3>
+<div class="row">
+    @foreach (var product in Model.FeaturedProducts)
+    {
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                @if (!string.IsNullOrEmpty(product.ImageUrl))
+                {
+                    <img src="@product.ImageUrl" class="card-img-top" alt="@product.ProductName" style="height: 200px; object-fit: cover;">
+                }
+                <div class="card-body">
+                    <h5 class="card-title">@product.ProductName</h5>
+                    <p class="card-text">@product.Description</p>
+                    <p class="card-text"><strong>@product.Price.ToString("C")</strong></p>
+                    <p class="card-text">
+                        <span class="badge @(product.StockAvailable > 10 ? "bg-success" : product.StockAvailable > 0 ? "bg-warning" : "bg-danger")">
+                            Stock: @product.StockAvailable
+                        </span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    }
+</div>

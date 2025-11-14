@@ -1,0 +1,60 @@
+﻿@model ABCRetailers.Models.Order
+
+@{
+    ViewData["Title"] = "Order Details";
+}
+
+<h2>Order Details</h2>
+
+<div class="card">
+    <div class="card-header">
+        <h4>Order #@Model.OrderId</h4>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-6">
+                <h5>Order Information</h5>
+                <p><strong>Order Date:</strong> @Model.OrderDate.ToString("MM/dd/yyyy")</p>
+                <p>
+                    <strong>Status:</strong>
+                    <span class="badge @(Model.Status == "Completed" ? "bg-success" :
+                                                                 Model.Status == "Processing" ? "bg-warning" :
+                                                                 Model.Status == "Cancelled" ? "bg-danger" : "bg-info")">
+                        @Model.Status
+                    </span>
+                </p>
+            </div>
+            <div class="col-md-6">
+                <h5>Customer Information</h5>
+                <p><strong>Customer:</strong> @Model.Username</p>
+                <p><strong>Customer ID:</strong> @Model.CustomerId</p>
+            </div>
+        </div>
+
+        <hr />
+
+        <h5>Product Information</h5>
+        <div class="row">
+            <div class="col-md-6">
+                <p><strong>Product:</strong> @Model.ProductName</p>
+                <p><strong>Product ID:</strong> @Model.ProductId</p>
+            </div>
+            <div class="col-md-6">
+                <p><strong>Unit Price:</strong> @Model.UnitPrice.ToString("C")</p>
+                <p><strong>Quantity:</strong> @Model.Quantity</p>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="row">
+            <div class="col-md-12">
+                <h4 class="text-end">Total: @Model.TotalPrice.ToString("C")</h4>
+            </div>
+        </div>
+    </div>
+    <div class="card-footer">
+        <a asp-action="Edit" asp-route-id="@Model.RowKey" class="btn btn-primary">Edit Status</a>
+        <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+    </div>
+</div>

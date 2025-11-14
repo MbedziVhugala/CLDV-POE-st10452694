@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36414.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ABCRetailers", "ABCRetailers1\ABCRetailers.csproj", "{A03C97ED-9075-4A67-8E11-C703FEEB8808}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ABCRetailers.Functions", "ABCRetailers.Functions\ABCRetailers.Functions.csproj", "{BF937982-2BA2-473C-B3A5-37A8E438A2A9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A03C97ED-9075-4A67-8E11-C703FEEB8808}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A03C97ED-9075-4A67-8E11-C703FEEB8808}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A03C97ED-9075-4A67-8E11-C703FEEB8808}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A03C97ED-9075-4A67-8E11-C703FEEB8808}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF937982-2BA2-473C-B3A5-37A8E438A2A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF937982-2BA2-473C-B3A5-37A8E438A2A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF937982-2BA2-473C-B3A5-37A8E438A2A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF937982-2BA2-473C-B3A5-37A8E438A2A9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9D637879-946F-4504-95B2-E6B7E35728E1}
+	EndGlobalSection
+EndGlobal
